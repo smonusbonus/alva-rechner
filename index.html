@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Alva Taschenrechner</title>
+
+  <style>
+    button {
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>ALVA ??? 6 JAHRE ALT</h1>
+
+  <div id="uhr" style="margin-bottom: 10px;"></div>
+
+  <div>
+    <div>
+      <button onclick="printButton(1)">1</button>
+      <button onclick="printButton(2)">2</button>
+      <button onclick="printButton(3)">3</button>
+    </div>
+
+    <div>
+      <button onclick="printButton(4)">4</button>
+      <button onclick="printButton(5)">5</button>
+      <button onclick="printButton(6)">6</button>
+    </div>
+
+    <div>
+      <button onclick="printButton(7)">7</button>
+      <button onclick="printButton(8)">8</button>
+      <button onclick="printButton(9)">9</button>
+    </div>
+
+    <div>
+      <button onclick="printButton('+')">+</button>
+      <button onclick="printButton(0)">0</button>
+      <button onclick="sumup()">=</button>
+    </div>
+
+    <button onclick="reset()">löschen</button>
+  </div>
+
+  <pre id="result"></pre>
+
+  <script>
+    var result = document.getElementById("result");
+    var uhr = document.getElementById("uhr");
+
+    const currentTime = new Date();
+    const hours = currentTime.getHours();
+    const minutes = currentTime.getMinutes();
+
+    uhr.innerHTML = `${hours}:${minutes} Uhr`;
+
+    function printButton(input) {
+      if (input === '+' && result.innerHTML[result.innerHTML.length - 1] === '+') return;
+      result.innerHTML += input;
+      console.log(input);
+    }
+
+    function reset() {
+      result.innerHTML = '';
+    }
+
+    function sumup() {
+      var sum = eval(result.innerHTML);
+      result.innerHTML = sum;
+    }
+  </script>
+</body>
