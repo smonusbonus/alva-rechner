@@ -4,8 +4,20 @@
   <title>Alva Taschenrechner</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     button {
-      margin: 5px;
+      margin: 0 1vh 1vh 0;
+      width: 30%;
+      height: 15vh;
+      font-size: 40px;
+    }
+
+    .calculator {
+      width: 100vw;
+      max-width: 1024px;
     }
   </style>
 </head>
@@ -15,7 +27,7 @@
 
   <div id="uhr" style="margin-bottom: 10px;"></div>
 
-  <div>
+  <div class="calculator">
     <div>
       <button onclick="printButton(1)">1</button>
       <button onclick="printButton(2)">2</button>
